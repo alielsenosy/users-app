@@ -44,11 +44,9 @@ export default function TransitionsModal({ EditUser, data }) {
       } else {
         return { ...currentUser, [name]: value };
       }
-
     });
   };
   const handelSubmit = (newUser) => {
-    console.log(newUser)
     EditUser(newUser);
     handleClose();
   };
@@ -142,7 +140,9 @@ export default function TransitionsModal({ EditUser, data }) {
               <Button
                 variant="contained"
                 color="success"
-                onClick={() => { handelSubmit(newUser) }}
+                onClick={() => {
+                  handelSubmit(newUser);
+                }}
               >
                 Save
               </Button>

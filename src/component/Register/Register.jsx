@@ -13,54 +13,7 @@ const Register = () => {
   const [passwordValue, setPasswordValue] = useState("");
   const [confirmPasswordValue, setConfirmPasswordValue] = useState("");
 
-  console.log(emailValue);
-  console.log(passwordValue);
-  console.log(confirmPasswordValue);
-
-  /////////////////////////////////////////////
-  // const onSignUpClicked = async () => {
-  //   alert("Sign Up not implentet yet");
-  // };
-
   const navigate = useNavigate();
-  //////////////////////////////////////////////////
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   // if button enabled with JS hack
-  //   const v1 = USER_REGEX.test(emailValue);
-  //   const v2 = PWD_REGEX.test(passwordValue);
-  //   if (!v1 || !v2) {
-  //     alert("Invalid Entry");
-  //     return;
-  //   }
-  //   try {
-  //     const response = await axios.post(
-  //       SIGNUP_URL,
-  //       JSON.stringify({ user: emailValue, Pwd: passwordValue }),
-  //       {
-  //         headers: { "Content-Type": "application/json" },
-  //         withCredentials: true,
-  //       }
-  //     );
-  //     console.log(response?.data);
-  //     console.log(response?.accessToken);
-  //     console.log(JSON.stringify(response));
-  //     //clear state and controlled inputs
-  //     //need value attrib on inputs for this
-  //     emailValue("");
-  //     setPasswordValue("");
-  //     setConfirmPasswordValue("");
-  //   } catch (err) {
-  //     if (!err?.response) {
-  //       alert("No Server Response ");
-  //     } else if (err.response?.status === 409) {
-  //       alert("Username Taken");
-  //     } else {
-  //       alert("Registration Failed");
-  //     }
-  //   }
-  // };
-  // onSubmit={handleSubmit}
   return (
     <div className="formcontainer">
       <form className="form">
@@ -88,6 +41,7 @@ const Register = () => {
           onChange={(e) => setPasswordValue(e.target.value)}
           id="outlined-search"
           label="Password "
+          type="password"
         />
         <Alert
           className={
@@ -99,21 +53,12 @@ const Register = () => {
         >
           This is an error alert — check it out!
         </Alert>
-        {/* <label
-          htmlFor="password"
-          className={
-            PWD_REGEX.test(passwordValue) === true || passwordValue === ""
-              ? "hidden"
-              : "visible"
-          }
-        >
-          Try other pass of [A-z 3,23]
-        </label> */}
         <TextField
           className="input"
           onChange={(e) => setConfirmPasswordValue(e.target.value)}
           id="outlined-search"
           label="Confirm Password "
+          type="password"
         />
         <Alert
           className={

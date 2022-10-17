@@ -7,13 +7,13 @@ const RequireAuth = () => {
   const location = useLocation();
   return (
     <>
-      {auth?.user ? ( // Opthional Chaning
+      {auth?.user ? (
         <Outlet />
       ) : (
         (alert("you are not autherized login first"),
         (<Navigate to="/signin" state={{ from: location }} replace />))
       )}
-    </> 
+    </>
   );
 };
 

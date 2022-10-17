@@ -16,14 +16,12 @@ function App() {
         <BrowserRouter>
           <Header />
           <Routes>
-            {/* <Route index element={<Home />} /> */}
             <Route path="about" element={<About />} />
             <Route path="signin" element={<SignIn />} />
             <Route path="register" element={<Register />} />
             <Route element={<RequireAuth />}>
               <Route path="users" element={<Users />} />
             </Route>
-
           </Routes>
         </BrowserRouter>
       </AuthProvider>

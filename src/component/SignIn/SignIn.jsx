@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router-dom";
 import "./SignIn.css";
+import { useNavigate } from "react-router-dom";
 import { useState, useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import TextField from "@mui/material/TextField";
@@ -13,7 +13,6 @@ const SignIn = () => {
   const signUPpass = localStorage.getItem("password");
   const navigate = useNavigate();
 
-  // console.log({ inEmailValue, signUPemail, inPasswordValue, signUPpass });
   const handleSignIn = () => {
     if (inEmailValue === signUPemail && inPasswordValue === signUPpass) {
       setAuth({ user: inEmailValue, pwd: inPasswordValue });
@@ -22,7 +21,6 @@ const SignIn = () => {
       alert("Wronge password or Email");
     }
   };
-  // onSubmit={handleSubmit}
   return (
     <div className="formcontainer">
       <form className="form">
@@ -40,6 +38,7 @@ const SignIn = () => {
           onChange={(e) => setInPasswordValue(e.target.value)}
           id="outlined-search"
           label="Password "
+          type="password"
         />
 
         <Button
